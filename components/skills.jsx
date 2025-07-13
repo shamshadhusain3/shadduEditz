@@ -130,11 +130,14 @@ export default function Skills() {
               <h3 className="text-2xl font-bold text-white mb-4">Software Proficiency</h3>
               <div className="space-y-4">
                 {[
+                   { name: "Capcut", percentage: 100 },
+                   { name: "Filmora", percentage: 100 },
+                   { name: "Canva", percentage: 100 },
                   { name: "Adobe Premiere Pro", percentage: 95 },
+                  { name: "Adobe Photoshop", percentage: 95 },
                   { name: "After Effects", percentage: 90 },
                   { name: "DaVinci Resolve", percentage: 85 },
                   { name: "Final Cut Pro", percentage: 80 },
-                  { name: "Cinema 4D", percentage: 70 },
                 ].map((software, index) => (
                   <div key={index}>
                     <div className="flex justify-between mb-1">
