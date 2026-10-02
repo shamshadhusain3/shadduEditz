@@ -1,3 +1,4 @@
+import SmoothScroll from "@/components/smooth-scroll"
 import Hero from "@/components/hero"
 import Projects from "@/components/projects"
 import Skills from "@/components/skills"
@@ -7,14 +8,15 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white overflow-hidden">
-      <Navbar />
-      <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
-    </main>
+    <SmoothScroll>
+      <main className="min-h-screen bg-black text-white selection:bg-cyan-500 selection:text-black">
+        <Navbar />
+        <Hero />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
+      </main>
+    </SmoothScroll>
   )
 }
-

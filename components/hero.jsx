@@ -135,13 +135,14 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-medium text-lg hover:shadow-glow transition-all duration-300"
+            <motion.a
+              href="#projects"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-medium text-lg hover:shadow-glow transition-all duration-300 shadow-glow-cyan"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               View My Work
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
