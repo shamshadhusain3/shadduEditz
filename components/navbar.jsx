@@ -54,9 +54,9 @@ export default function Navbar() {
           </Link>
         </motion.div>
 
-        <nav>
-          <ul className="flex items-center space-x-6 sm:space-x-8">
-            {["Home", "Projects", "Skills", "Contact"].map((item) => (
+        <nav className="flex items-center space-x-6 sm:space-x-8">
+          <ul className="flex items-center space-x-5 sm:space-x-8">
+            {["Home", "Experience", "Projects", "Skills", "Contact"].map((item) => (
               <motion.li key={item} whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.95 }}>
                 <Link 
                   href={`#${item.toLowerCase()}`} 
@@ -68,6 +68,17 @@ export default function Navbar() {
               </motion.li>
             ))}
           </ul>
+
+          <motion.a
+            href="/Shadmaan_Mahmood_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/40 text-cyan-300 hover:text-white hover:border-cyan-400 transition-all"
+          >
+            Resume
+          </motion.a>
         </nav>
       </div>
     </motion.header>

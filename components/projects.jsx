@@ -224,15 +224,16 @@ export default function Projects() {
     return () => clearInterval(timer)
   }, [isAutoPlayRunning, filteredProjects.length, safeIndex])
 
-  // Scroll active thumbnail smoothly into view inside slider
+  // Scroll active thumbnail smoothly into view inside slider (container-only, never scrolls the page)
   useEffect(() => {
     if (sliderScrollRef.current) {
       const activeEl = sliderScrollRef.current.children[safeIndex]
       if (activeEl) {
-        activeEl.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center"
+        const container = sliderScrollRef.current
+        const targetLeft = activeEl.offsetLeft - container.offsetWidth / 2 + activeEl.offsetWidth / 2
+        container.scrollTo({
+          left: targetLeft,
+          behavior: "smooth"
         })
       }
     }

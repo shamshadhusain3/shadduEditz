@@ -18,6 +18,13 @@ export default function SmoothScroll({ children }) {
       infinite: false,
     })
 
+    // Scroll to top on fresh page load/reload if needed
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual"
+      }
+    }
+
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)

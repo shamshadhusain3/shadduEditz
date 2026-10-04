@@ -11,9 +11,12 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-600 mb-4 md:mb-0"
+            className="mb-4 md:mb-0"
           >
-            SHaDDu EDITS
+            <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
+              SHADMAAN MAHMOOD
+            </div>
+            <p className="text-xs text-gray-400 mt-1">Social Media Manager & Video Editor • Shaddu Editz</p>
           </motion.div>
 
           <motion.div
@@ -22,8 +25,8 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-gray-400 text-center md:text-right"
           >
-            <p>© {new Date().getFullYear()}SHaDDu EDITS. All rights reserved.</p>
-            <p className="text-sm mt-1">Professional Video Editing & Visual Storytelling</p>
+            <p>© {new Date().getFullYear()} Shadmaan Mahmood. All rights reserved.</p>
+            <p className="text-xs text-gray-500 mt-1">Lucknow, India • shadmaanmahmood786@gmail.com</p>
           </motion.div>
         </div>
       </div>

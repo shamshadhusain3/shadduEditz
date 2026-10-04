@@ -2,56 +2,81 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Film, Scissors, Layers, Music, Camera, Palette, Wand2, Sparkles } from "lucide-react"
+import { 
+  Film, 
+  Flame, 
+  TrendingUp, 
+  Users, 
+  Bot, 
+  Mic, 
+  Palette, 
+  FileEdit, 
+  Repeat, 
+  Camera,
+  CheckCircle2,
+  Sparkles
+} from "lucide-react"
 
 const skills = [
   {
     icon: <Film className="w-8 h-8" />,
     name: "Video Editing",
-    description: "Professional editing with Adobe Premiere Pro and Final Cut Pro",
+    description: "Premiere Pro, After Effects & CapCut for high-impact visual cuts",
     color: "from-cyan-500 to-blue-500",
   },
   {
-    icon: <Scissors className="w-8 h-8" />,
-    name: "Color Grading",
-    description: "Advanced color correction and grading with DaVinci Resolve",
+    icon: <Flame className="w-8 h-8" />,
+    name: "Short-Form & Viral Hooks",
+    description: "Reels, Shorts, high-retention opening hooks & kinetic pacing",
     color: "from-purple-500 to-pink-500",
   },
   {
-    icon: <Layers className="w-8 h-8" />,
-    name: "Compositing",
-    description: "Visual effects and compositing with Adobe After Effects",
+    icon: <TrendingUp className="w-8 h-8" />,
+    name: "Social Media Strategy",
+    description: "Organic page growth (0 to 250K+), algorithm mastery & viral distribution",
+    color: "from-emerald-500 to-teal-500",
+  },
+  {
+    icon: <Bot className="w-8 h-8" />,
+    name: "AI Prompt Engineering",
+    description: "AI image generation, script generation & cutting-edge AI editing tools",
+    color: "from-indigo-500 to-cyan-500",
+  },
+  {
+    icon: <Mic className="w-8 h-8" />,
+    name: "Podcast & Long-Form",
+    description: "Multi-cam syncing, narrative pacing, audio cleanup & sound design",
     color: "from-amber-500 to-orange-500",
   },
   {
-    icon: <Music className="w-8 h-8" />,
-    name: "Sound Design",
-    description: "Audio editing and sound design with Adobe Audition",
-    color: "from-green-500 to-emerald-500",
+    icon: <FileEdit className="w-8 h-8" />,
+    name: "Content Scripting",
+    description: "Awareness-led scripts in Hindi, Urdu, English & Hinglish (1.5M+ views)",
+    color: "from-pink-500 to-rose-500",
+  },
+  {
+    icon: <Repeat className="w-8 h-8" />,
+    name: "Content Repurposing",
+    description: "Extracting high-performing short clips from podcasts and long videos",
+    color: "from-blue-500 to-indigo-500",
+  },
+  {
+    icon: <Users className="w-8 h-8" />,
+    name: "Team & Production Oversight",
+    description: "Managing editing teams, shoot scheduling, and content pipelines",
+    color: "from-violet-500 to-purple-500",
   },
   {
     icon: <Camera className="w-8 h-8" />,
-    name: "Cinematography",
-    description: "Understanding of camera techniques and visual storytelling",
-    color: "from-red-500 to-rose-500",
+    name: "Camera Handling & Shoots",
+    description: "DSLR & mobile cinematography, lighting setup & on-location shoot management",
+    color: "from-red-500 to-amber-500",
   },
   {
     icon: <Palette className="w-8 h-8" />,
-    name: "Motion Graphics",
-    description: "Creating dynamic motion graphics and animations",
-    color: "from-indigo-500 to-violet-500",
-  },
-  // {
-  //   icon: <Wand2 className="w-8 h-8" />,
-  //   name: "3D Integration",
-  //   description: "Incorporating 3D elements into video projects",
-  //   color: "from-blue-500 to-indigo-500",
-  // },
-  {
-    icon: <Sparkles className="w-8 h-8" />,
-    name: "Special Effects",
-    description: "Creating and implementing special visual effects",
-    color: "from-pink-500 to-rose-500",
+    name: "Graphic Design & Thumbnails",
+    description: "Canva & Photoshop click-through rate (CTR) optimized assets",
+    color: "from-cyan-500 to-teal-500",
   },
 ]
 
@@ -64,7 +89,7 @@ export default function Skills() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
       },
     },
   }
@@ -75,7 +100,7 @@ export default function Skills() {
   }
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section id="skills" ref={sectionRef} className="py-24 bg-gradient-to-b from-gray-900 via-black to-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,11 +108,15 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium mb-3">
+            <Sparkles className="w-4 h-4" />
+            <span>CORE COMPETENCIES & TOOLKIT</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-600">
-            Technical Expertise
+            Skills & Technical Expertise
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Mastering the tools and techniques that bring visual stories to life
+          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
+            Combining creative storytelling, viral algorithms, and AI-accelerated editing pipelines
           </p>
         </motion.div>
 
@@ -95,7 +124,7 @@ export default function Skills() {
           variants={container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"
         >
           {skills.map((skill, index) => (
             <motion.div
@@ -103,18 +132,20 @@ export default function Skills() {
               variants={item}
               transition={{ duration: 0.5 }}
               whileHover={{
-                y: -10,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                y: -8,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.4)",
               }}
-              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-gray-600 transition-all duration-300"
+              className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/80 rounded-2xl p-5 hover:border-cyan-500/50 transition-all duration-300 flex flex-col justify-between"
             >
-              <div
-                className={`w-16 h-16 rounded-full bg-gradient-to-br ${skill.color} flex items-center justify-center mb-4 mx-auto`}
-              >
-                {skill.icon}
+              <div>
+                <div
+                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${skill.color} flex items-center justify-center mb-4 text-white shadow-lg`}
+                >
+                  {skill.icon}
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{skill.name}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">{skill.description}</p>
               </div>
-              <h3 className="text-xl font-bold text-white text-center mb-2">{skill.name}</h3>
-              <p className="text-gray-400 text-center">{skill.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -122,64 +153,66 @@ export default function Skills() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 bg-gradient-to-r from-gray-900/90 to-gray-800/80 backdrop-blur-md border border-gray-700 rounded-2xl p-8"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Software Proficiency</h3>
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                <span>Software & Tools Proficiency</span>
+              </h3>
               <div className="space-y-4">
                 {[
-                   { name: "Capcut", percentage: 100 },
-                   { name: "Filmora", percentage: 100 },
-                   { name: "Canva", percentage: 100 },
                   { name: "Adobe Premiere Pro", percentage: 95 },
-                  { name: "Adobe Photoshop", percentage: 95 },
                   { name: "After Effects", percentage: 90 },
+                  { name: "CapCut & Filmora", percentage: 98 },
+                  { name: "Canva & Photoshop", percentage: 92 },
+                  { name: "AI Workflows (Prompts / Scripts / Gen AI)", percentage: 94 },
                   { name: "DaVinci Resolve", percentage: 85 },
-                  { name: "Final Cut Pro", percentage: 80 },
+                  { name: "Camera Handling (DSLR & Mobile)", percentage: 90 },
                 ].map((software, index) => (
                   <div key={index}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-300">{software.name}</span>
-                      <span className="text-gray-400">{software.percentage}%</span>
+                    <div className="flex justify-between mb-1.5 text-sm font-medium">
+                      <span className="text-gray-200">{software.name}</span>
+                      <span className="text-cyan-400">{software.percentage}%</span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div className="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden">
                       <motion.div
-                        className={`h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-600`}
+                        className="h-2.5 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500"
                         initial={{ width: 0 }}
                         animate={isInView ? { width: `${software.percentage}%` } : { width: 0 }}
-                        transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
+                        transition={{ duration: 1, delay: 0.1 + index * 0.08 }}
                       />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
+
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Creative Process</h3>
-              <ul className="space-y-4">
+              <h3 className="text-2xl font-bold text-white mb-6">Production & Growth Pipeline</h3>
+              <ul className="space-y-3.5">
                 {[
-                  "Concept Development",
-                  "Storyboarding & Planning",
-                  "Footage Organization",
-                  "Rough Cut Assembly",
-                  "Fine Editing & Pacing",
-                  "Color Grading & VFX",
-                  "Sound Design & Music",
-                  "Final Review & Delivery",
+                  "Niche Research & Viral Trend Analysis",
+                  "Awareness-Led Scripting & Hook Crafting",
+                  "Multi-Cam Shoot Setup & Lighting Direction",
+                  "High-Retention Assembly & Pacing Cuts",
+                  "Motion Graphics, Kinetic Captions & Color Grading",
+                  "AI Upscaling, Noise Removal & Sound Design",
+                  "Multi-Platform Distribution (IG, YT, FB, LinkedIn)",
+                  "Retention Analytics & Iterative Optimization",
                 ].map((step, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    className="flex items-center"
+                    transition={{ duration: 0.5, delay: 0.2 + index * 0.08 }}
+                    className="flex items-center gap-3 text-sm text-gray-300 bg-black/40 p-2.5 rounded-xl border border-white/5"
                   >
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center mr-3">
-                      <span className="text-white font-bold">{index + 1}</span>
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center shrink-0">
+                      <span className="text-white font-bold text-xs">{index + 1}</span>
                     </div>
-                    <span className="text-gray-300">{step}</span>
+                    <span>{step}</span>
                   </motion.li>
                 ))}
               </ul>

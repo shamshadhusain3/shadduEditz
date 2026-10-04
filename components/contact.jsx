@@ -53,6 +53,11 @@ export default function Contact() {
 
   const socialLinks = [
     {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/shadmaan-mahmood",
+      icon: <Linkedin className="w-5 h-5" />,
+    },
+    {
       name: "Instagram",
       url: "https://www.instagram.com/_shadduu___?igsh=MXF1dXh0YzZrbzB1OA==",
       icon: <Instagram className="w-5 h-5" />,
@@ -62,30 +67,28 @@ export default function Contact() {
       url: "https://www.facebook.com/share/19QtviwCzR/?mibextid=wwXIfr",
       icon: <Facebook className="w-5 h-5" />,
     },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/shadmaan-mahmood-104299275",
-      icon: <Linkedin className="w-5 h-5" />,
-    },
   ]
 
   const contactInfo = [
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "shaddueditz11@gmail.com",
+      value: "shadmaanmahmood786@gmail.com",
+      href: "mailto:shadmaanmahmood786@gmail.com",
       color: "from-cyan-500 to-blue-500",
     },
     {
       icon: <PhoneCall className="w-6 h-6" />,
       title: "Phone",
       value: "+91 8840807195",
+      href: "tel:+918840807195",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "Daliganj Lucknow.",
+      value: "Lucknow, India",
+      href: null,
       color: "from-amber-500 to-orange-500",
     },
   ]
@@ -107,8 +110,7 @@ export default function Contact() {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Ready to bring your vision to life? Let's collaborate on your next
-            video project
+            Ready to scale your channel or elevate your video content? Let's collaborate.
           </p>
         </motion.div>
 
@@ -119,35 +121,52 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 h-full">
-              <h3 className="text-2xl font-bold text-white mb-6">
-                Contact Information
-              </h3>
+            <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 h-full flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Contact Information
+                </h3>
 
-              <div className="space-y-6 mb-8">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={
-                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                    }
-                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                    className="flex items-center"
-                  >
-                    <div
-                      className={`w-12 h-12 rounded-full bg-gradient-to-r ${info.color} flex items-center justify-center mr-4`}
-                    >
-                      {info.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-gray-300 font-medium">
-                        {info.title}
-                      </h4>
-                      <p className="text-white">{info.value}</p>
-                    </div>
-                  </motion.div>
-                ))}
+                <div className="space-y-6 mb-8">
+                  {contactInfo.map((info, index) => {
+                    const Content = (
+                      <div className="flex items-center group">
+                        <div
+                          className={`w-12 h-12 rounded-full bg-gradient-to-r ${info.color} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform`}
+                        >
+                          {info.icon}
+                        </div>
+                        <div>
+                          <h4 className="text-gray-300 font-medium text-sm">
+                            {info.title}
+                          </h4>
+                          <p className="text-white group-hover:text-cyan-400 transition-colors font-medium">
+                            {info.value}
+                          </p>
+                        </div>
+                      </div>
+                    )
+
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={
+                          isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                        }
+                        transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                      >
+                        {info.href ? (
+                          <a href={info.href} className="block">
+                            {Content}
+                          </a>
+                        ) : (
+                          Content
+                        )}
+                      </motion.div>
+                    )
+                  })}
+                </div>
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-6">Follow Me</h3>
